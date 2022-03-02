@@ -9,49 +9,6 @@ Hello 小伙伴们，如果觉得本文还不错，记得点个赞或者给个 s
 - Node 连接 MySQL - 通过 npm 安装 mysql，从而实现数据库的链接
 - Node 实战 - 企业官网从 0 开始，打造能注册、登录以及留言的企业官网
 
-
-
-## [一 目录](https://link.juejin.cn/?target=undefined)
-
-| 目录                                                         |
-| ------------------------------------------------------------ |
-| [一 目录](https://juejin.cn/post/6844903745755545614#chapter-one) |
-| [二 前言](https://juejin.cn/post/6844903745755545614#chapter-two) |
-| [三 基础学习](https://juejin.cn/post/6844903745755545614#chapter-three) |
-| [3.1 HTTP - 开始 Node 之旅](https://juejin.cn/post/6844903745755545614#chapter-three-one) |
-| [3.2 URL 模块](https://juejin.cn/post/6844903745755545614#chapter-three-two) |
-| [3.3 CommonJS](https://juejin.cn/post/6844903745755545614#chapter-three-three) |
-| [3.4 包与 npm](https://juejin.cn/post/6844903745755545614#chapter-three-four) |
-| [3.5 fs 文件管理](https://juejin.cn/post/6844903745755545614#chapter-three-five) |
-| [3.6 fs 案例](https://juejin.cn/post/6844903745755545614#chapter-three-six) |
-| [3.7 fs 流](https://juejin.cn/post/6844903745755545614#chapter-three-seven) |
-| [3.8 创建 Web 服务器](https://juejin.cn/post/6844903745755545614#chapter-three-eight) |
-| [3.9 非阻塞 I/O 事件驱动](https://juejin.cn/post/6844903745755545614#chapter-three-night) |
-| [3.10 get 与 post](https://juejin.cn/post/6844903745755545614#chapter-three-ten) |
-| [3.11 Node 连接 MySQL](https://juejin.cn/post/6844903745755545614#chapter-three-eleven) |
-| [四 Web 实战 —— 企业官网](https://juejin.cn/post/6844903745755545614#chapter-four) |
-| [4.1 编程环境](https://juejin.cn/post/6844903745755545614#chapter-four-one) |
-| [4.2 后端接口](https://juejin.cn/post/6844903745755545614#chapter-four-two) |
-| [4.3 注册功能](https://juejin.cn/post/6844903745755545614#chapter-four-three) |
-| [4.4 登录功能](https://juejin.cn/post/6844903745755545614#chapter-four-four) |
-| [4.5 留言功能](https://juejin.cn/post/6844903745755545614#chapter-four-five) |
-| [五 工具整合](https://juejin.cn/post/6844903745755545614#chapter-five) |
-| [5.1 supervisor - 监听 Node 改动](https://juejin.cn/post/6844903745755545614#chapter-five-one) |
-| [5.2 PM2 - Node 进程管理](https://juejin.cn/post/6844903745755545614#chapter-five-two) |
-| [六 参考资料](https://juejin.cn/post/6844903745755545614#chapter-six) |
-| [七 线上部署](https://juejin.cn/post/6844903745755545614#chapter-seven) |
-| [八 归纳总结](https://juejin.cn/post/6844903745755545614#chapter-eight) |
-
-## [二 前言](https://link.juejin.cn/?target=undefined)
-
-> [返回目录](https://juejin.cn/post/6844903745755545614#catalog-chapter-two)
-
- 本文主要目的：
-
-1. 整合 Node 基础，加深 **wujf** 对 Node 的学习了解，并且方便日后复习。
-2. 整合 Node 工具，方便查找在 Node 开发中，有哪些工具比较有利于开发。
-3. 给初学 Node 的小伙伴做一个参考，如有疑问还请在 QQ 群：`798961601` 中咨询。
-
 ## [三 基础](https://link.juejin.cn/?target=undefined)
 
 > [返回目录](https://juejin.cn/post/6844903745755545614#catalog-chapter-three)
@@ -428,20 +385,20 @@ console.log(url.resolve("http://www.baidu.com/wujf", "zhngsan"));
 
 - CommonJS 与 Node.js 的关系？
 
- CommonJS 就是模块化的标准，Node.js 就是 CommonJS（模块化）的实现。
+ `CommonJS `就是模块化的标准，`Node.js `就是 `CommonJS`（模块化）的实现。
 
 - Node.js 中的模块化？
 
-1. 在 Node 中，模块分为两类：一是 Node 提供的模块，称为核心模块；二是用户编写的模块，成为文件模块。核心模块在 Node 源代码的编译过程中，编译进了二进制执行文件，所以它的加载速度是最快的，例如：HTTP 模块、URL 模块、FS 模块；文件模块是在运行时动态加载的，需要完整的路劲分析、文件定位、编译执行过程等……所以它的速度相对核心模块来说会更慢一些。
-2. 我们可以将公共的功能抽离出一个单独的 JS 文件存放，然后在需要的情况下，通过 exports 或者 module.exports 将模块导出，并通过 require 引入这些模块。
+1. 在 `Node `中，模块分为两类：一是 `Node` 提供的模块，称为核心模块；二是用户编写的模块，成为文件模块。核心模块在 Node 源代码的编译过程中，编译进了二进制执行文件，所以它的加载速度是最快的，例如：`HTTP `模块、`URL` 模块、`FS `模块；文件模块是在运行时动态加载的，需要完整的路劲分析、文件定位、编译执行过程等……所以它的速度相对核心模块来说会更慢一些。
+2. 我们可以将公共的功能抽离出一个单独的 JS 文件存放，然后在需要的情况下，通过 `exports` 或者 `module.exports` 将模块导出，并通过 `require `引入这些模块。
 
- 现在，我们通过三种使用方式，来讲解下 Node 中的模块化及 exports/require 的使用。
+ 现在，我们通过三种使用方式，来讲解下 `Node` 中的模块化及 `exports/require` 的使用。
 
  我们先查看下目录：
 
 
 
-![img](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/12/23/167db4838b82f804~tplv-t2oaga2asx-watermark.awebp)
+![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/79f7e50ad94c4b71a652e3e9855d13bb~tplv-k3u1fbpfcp-watermark.image?)
 
 
 
@@ -454,7 +411,7 @@ console.log(url.resolve("http://www.baidu.com/wujf", "zhngsan"));
 
 > 03_tool-add.js
 
-```
+```js
 // 1. 假设我们文件其中有个工具模块
 var tools = {
   add: (...numbers) => {
@@ -490,7 +447,7 @@ module.exports = tools;
  第二步，我们通过 `modules.exports` 将 `tools` 进行了导出。
  所以，我们在 `03_CommonJS.js` 可以通过 `require` 导入使用：
 
-```
+```js
 var http = require("http");
 
 var tools1 = require('./03_tool-add');
@@ -528,7 +485,7 @@ http.createServer(function (req, res) {
 
 > 03_tool-multiply.js
 
-```
+```js
 var tools = {
   multiply: (...numbers) => {
     let sum = numbers[0];
@@ -544,7 +501,7 @@ module.exports = tools;
 
  在引用方面，我们只需要通过：
 
-```
+```js
 // 如果 Node 在当前目录没找到 tool.js 文件，则会去 node_modules 里面去查找
 var tools2 = require('03_tool-multiply');
 
@@ -559,7 +516,7 @@ console.log(tools2.multiply(1, 2, 3, 4));
 
 > wujf-module/tools.js
 
-```
+```js
 var tools = {
   add: (...numbers) => {
     let sum = 0;
@@ -590,7 +547,7 @@ module.exports = tools;
 
 > 03_CommonJS.js
 
-```
+```js
 var http = require("http");
 
 var tools1 = require('./03_tool-add');
@@ -646,10 +603,8 @@ http.createServer(function (req, res) {
 
 ### [3.4 包与 npm](https://link.juejin.cn/?target=undefined)
 
-> [返回目录](https://juejin.cn/post/6844903745755545614#catalog-chapter-three-four)
-
- Node 中除了它自己提供的核心模块之外，还可以自定义模块，以及使用 **第三方模块**。
- Node 中第三方模块由包组成，可以通过包来对一组具有相互依赖关系的模块进行统一管理。
+ `Node` 中除了它自己提供的核心模块之外，还可以自定义模块，以及使用 **第三方模块**。
+ `Node` 中第三方模块由包组成，可以通过包来对一组具有相互依赖关系的模块进行统一管理。
 
 
 
@@ -659,19 +614,18 @@ http.createServer(function (req, res) {
 
  那么，假如我们需要使用一些第三方模块，应该去哪找呢？
 
-1. [百度](https://link.juejin.cn/?target=https%3A%2F%2Fwww.baidu.com)。百度查找你需要安装的第三方模块的对应内容。
 2. [npm 官网](https://link.juejin.cn/?target=https%3A%2F%2Fwww.npmjs.com%2F)。如果你已经知道包的名字或者包的作用。那么，直接在 npm 官网上搜索，想必会更快找到想要安装的包。
 
- 那么，npm 是啥？
- npm 是世界上最大的开放源代码的生态系统。我们可以通过 npm 下载各种各样的包。
- 在我们安装 Node 的时候，它默认会顺带给你安装 npm。
+ 那么，`npm` 是啥？
+ `npm` 是世界上最大的开放源代码的生态系统。我们可以通过 `npm` 下载各种各样的包。
+ 在我们安装 `Node` 的时候，它默认会顺带给你安装 npm。
 
-- `npm -v`：查看 npm 版本。
+- `npm -v`：查看 `npm` 版本。
 - `npm list`：查看当前目录下都安装了哪些 npm 包。
 - `npm info 模块`：查看该模块的版本及内容。
 - `npm i 模块@版本号`：安装该模块的指定版本。
 
- 在平时使用 npm 安装包的过程中，你可能需要知道一些 npm 基本知识：
+ 在平时使用 npm 安装包的过程中，你可能需要知道一些 `npm `基本知识：
 
 - `i`/`install`：安装。使用 `install` 或者它的简写 `i`，都表明你想要下载这个包。
 - `uninstall`：卸载。如果你发现这个模块你已经不使用了，那么可以通过 `uninstall` 卸载它。
@@ -697,8 +651,6 @@ http.createServer(function (req, res) {
 
 ### [3.5 fs 文件管理](https://link.juejin.cn/?target=undefined)
 
-> [返回目录](https://juejin.cn/post/6844903745755545614#catalog-chapter-three-five)
-
  本章节我们讲解下 fs 文件管理：
 
 > 如需快速找到下面某个内容，请使用 `Ctrl + F`
@@ -713,19 +665,13 @@ http.createServer(function (req, res) {
 8. `fs.rmdir` 删除目录
 9. `fs.unlink` 删除文件
 
-> 此章节文件目录：
-
-
-
-![img](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/12/23/167db4943495aae8~tplv-t2oaga2asx-watermark.awebp)
-
 
 
  **首先**，我们通过 `fs.stat` 检查一个读取的是文件还是目录：
 
-> 05_fs.js
+> 04_fs.js
 
-```
+```js
 //  1. fs.stat
 let fs = require('fs');
 fs.stat('index.js', (error, stats) => {
@@ -737,24 +683,24 @@ fs.stat('index.js', (error, stats) => {
     /**
      * Console：
      * Stats {
-     *  dev: 886875,
-     *  mode: 33206,
-     *  nlink: 1,
-     *  uid: 0,
-     *  gid: 0,
-     *  rdev: 0,
-     *  blksize: undefined,
-     *  ino: 844424931461390,
-     *  size: 284,
-     *  blocks: undefined,
-     *  atimeMs: 1542847157494,
-     *  mtimeMs: 1543887546361.2158,
-     *  ctimeMs: 1543887546361.2158,
-     *  birthtimeMs: 1542847157493.663,
-     *  atime: 2018-11-22T00:39:17.494Z,
-     *  mtime: 2018-12-04T01:39:06.361Z,
-     *  ctime: 2018-12-04T01:39:06.361Z,
-     *  birthtime: 2018-11-22T00:39:17.494Z }
+     *  dev: 235673175,
+      mode: 33206,
+      nlink: 1,
+      uid: 0,
+      gid: 0,
+      rdev: 0,
+      blksize: 4096,
+      ino: 844424930648477,
+      size: 556,
+      blocks: 1,
+      atimeMs: 1646231326184.0894,
+      mtimeMs: 1646229000163.8994,
+      ctimeMs: 1646229000163.8994,
+      birthtimeMs: 1646229000163.8994,
+      atime: 2022-03-02T14:28:46.184Z,
+      mtime: 2022-03-02T13:50:00.164Z,
+      ctime: 2022-03-02T13:50:00.164Z,
+      birthtime: 2022-03-02T13:50:00.164Z }
      */
 
     console.log(`文件：${stats.isFile()}`); 
@@ -774,7 +720,7 @@ fs.stat('index.js', (error, stats) => {
 
 > 05_fs.js
 
-```
+```js
 //  2. fs.mkdir
 let fs = require('fs');
 
@@ -801,7 +747,7 @@ fs.mkdir('css', (err) => {
 
 > 05_fs.js
 
-```
+```js
 //  8. fs.rmdir
 let fs = require('fs');
 
@@ -828,7 +774,7 @@ fs.rmdir('css', (err) => {
 
 > 05_fs.js
 
-```
+```js
 //  3. fs.writeFile
 let fs = require('fs');
 
@@ -858,7 +804,7 @@ fs.writeFile('index.js', 'Hello wujf', (err) => {
 
 > 05_fs.js
 
-```
+```js
 //  4. fs.appendFile
 let fs = require('fs');
 
@@ -876,7 +822,7 @@ fs.appendFile('index.js', '这段文本是要追加的内容', (err) => {
 
 > index.js
 
-```
+```js
 Hello jsliang这段文本是要追加的内容
 ```
 
@@ -887,7 +833,7 @@ Hello jsliang这段文本是要追加的内容
 
 > 05_fs.js
 
-```
+```js
 let fs = require('fs');
 
 // 5. fs.readFile
@@ -937,7 +883,7 @@ fs.readdir('node_modules', (err, data) => {
 
 > 05_fs.js
 
-```
+```js
 let fs = require('fs');
 
 // 7. fs.rename 重命名
@@ -955,7 +901,7 @@ fs.rename('index.js', 'wujf.js', (err) => {
 
 > 05_fs.js
 
-```
+```js
 let fs = require('fs');
 
 // 7. fs.rename 重命名
@@ -986,7 +932,7 @@ fs.rename('wujf.js', 'node_modules/wujf.js', (err) => {
 
 > 06_fsDemo.js
 
-```
+```js
 /**
  * 1. fs.stat 检测是文件还是目录
  * 2. fs.mkdir 创建目录
@@ -1067,7 +1013,7 @@ fs.readdir('node_modules', (err, files) => {
 
  话不多说，我们了解下 `fs` 流及其读取：
 
-```
+```js
 // 新建 fs
 const fs = require('fs');
 // 流的方式读取文件
@@ -1100,7 +1046,7 @@ fileReadStream.on('error', (error) => {
 
  在这里，我们通过 `fs` 模块的 `createReadStream` 创建了读取流，然后读取文件 `index.js`，从而最后在控制台输出了：
 
-```
+```js
 1 接收到：259
 ——结束——
 1
@@ -1113,7 +1059,7 @@ console.log("尽信书，不如无书；尽看代码，不如删掉这些文件�
 
  然后，我们试下流的存入：
 
-```
+```js
 let fs = require('fs');
 let data = 'console.log("Hello World! 我要存入数据！")';
 
@@ -1330,7 +1276,7 @@ getExt = (extName) => {
 
 > 08_WebService.js
 
-```
+```js
 // 引入 http 模块
 let http = require("http");
 
@@ -1430,7 +1376,7 @@ getExt = (extName) => {
 
 > 09_io.js
 
-```
+```js
 console.log("1");
 
 console.log("2");
@@ -1450,7 +1396,7 @@ console.log("3");
 
 > 09_io.js
 
-```
+```js
 console.log("1");
 
 // console.log("2");
@@ -1487,7 +1433,7 @@ console.log("3");
 
 > 09_io.js
 
-```
+```js
 let fs = require("fs");
 
 getExt = (callback) => {
@@ -1505,7 +1451,7 @@ getExt( (result) => {
 
  然后，我们通过 Node 的 `events` 模块来解决这个异步问题：
 
-```
+```js
 // 引入 fs 模块
 let fs = require("fs");
 
@@ -1553,7 +1499,7 @@ EventEmitter.on('data', (ext) => {
 
 > index.js
 
-```
+```js
 // 加载 http 模块
 var http = require('http');
 
@@ -1619,7 +1565,7 @@ console.log('http server is start...');
 
 > index.html
 
-```
+```js
 <!DOCTYPE html>
 <html lang="en">
 
@@ -1719,7 +1665,7 @@ npm i mysql -D
 
 > index.js
 
-```
+```js
 var mysql = require('mysql');
 var connection = mysql.createConnection({
   host: 'localhost',
@@ -1740,7 +1686,7 @@ connection.end();
 
  **最后**，我们通过 `node index.js`，打开该服务：
 
-```
+```js
 [ RowDataPacket { id: 1, name: 'wujf', age: '23' },
   RowDataPacket { id: 2, name: 'wujf', age: '23' } ]
 ```
@@ -1763,7 +1709,7 @@ connection.end();
 
 > add.js
 
-```
+```js
 var mysql = require('mysql');
 var connection = mysql.createConnection({
   host: 'localhost',
@@ -1797,7 +1743,7 @@ connection.end();
 
 > delete.js
 
-```
+```js
 // 连接 MySQL
 var mysql = require('mysql');
 // MySQL 的连接信息
@@ -2014,7 +1960,7 @@ connection.end();
 
 > index.js
 
-```
+```js
 // 连接 MySQL：先安装 npm i mysql -D
 var mysql = require('mysql');
 // MySQL 的连接信息
@@ -2150,7 +2096,7 @@ function getNowFormatDate() {
 
 > index.html
 
-```
+```js
 <!DOCTYPE html>
 <html lang="en">
 
@@ -2959,881 +2905,5 @@ if (pathName == "/getMessage") { // 获取留言信息
 
 ## [六 参考资料](https://link.juejin.cn/?target=undefined)
 
-> [返回目录](https://juejin.cn/post/6844903745755545614#catalog-chapter-six)
+转载至 [jsliang node教程](https://juejin.cn/post/6844903745755545614)
 
- 在编写这篇文章的过程中，有一些参考资料是值得保留阅读的：
-
-1. **经典：该类值得我们研读**
-
-> 经典，就是随着时间流逝，它还是那么有参考价值。
-
-- [API 文档 | Node.js 中文网](https://link.juejin.cn/?target=http%3A%2F%2Fnodejs.cn%2Fapi%2F)
-- [Node.js 教程 | 菜鸟教程](https://link.juejin.cn/?target=http%3A%2F%2Fwww.runoob.com%2Fnodejs%2Fnodejs-tutorial.html)
-- [Express 文档 | Express 中文网](https://link.juejin.cn/?target=http%3A%2F%2Fwww.expressjs.com.cn%2F)
-
-1. **尝试：该类值得我们参考借鉴**
-
-> Node 基础模块
-
-- [nodejs之querystring模块 | 博客园 - whiteMu](https://link.juejin.cn/?target=https%3A%2F%2Fwww.cnblogs.com%2FwhiteMu%2Fp%2F5986297.html)
-
-> Node 编写接口
-
-- [用Node编写RESTful API接口 | php 中文网 - 不言](https://link.juejin.cn/?target=http%3A%2F%2Fwww.php.cn%2Fjs-tutorial-406242.html)
-
-> MySQL 学习
-
-- [MySQL 教程 | 菜鸟教程](https://link.juejin.cn/?target=http%3A%2F%2Fwww.runoob.com%2Fmysql%2Fmysql-tutorial.html)
-
-> Node 连接数据库
-
-- [node.js前后台交互示例 -- 使用node.js实现用户注册功能 | 博客园 - 返回主页 党兴明](https://link.juejin.cn/?target=https%3A%2F%2Fwww.cnblogs.com%2Fby-dxm%2Fp%2F6723039.html)
-- [node.js实现简单的登录注册页面 - 博客园 - 返回主页 bestjarvan](https://link.juejin.cn/?target=https%3A%2F%2Fwww.cnblogs.com%2Fbestjarvan%2Farchive%2F2017%2F04%2F08%2F6680857.html)
-
-> Node 仿 Express
-
-- [nodejs模块：简单http请求路由，仿express | CSDN - TTUZ](https://link.juejin.cn/?target=https%3A%2F%2Fblog.csdn.net%2Ftiantangyouzui%2Farticle%2Fdetails%2F70184959)
-- [初学nodejs一：别被Express的API搞晕了 | 前端乱炖 - 飞天小黑神猪](https://link.juejin.cn/?target=http%3A%2F%2Fwww.html-js.com%2Farticle%2F1603)
-- [NodeJs 实战——原生 NodeJS 轻仿 Express 框架从需求到实现（一） | 倔强的石头 - 掘金](https://juejin.cn/post/6844903716315725832)
-- [NodeJs 实战——原生 NodeJS 轻仿 Express 框架从需求到实现（二） | 倔强的石头 - 掘金](https://juejin.cn/post/6844903717917949959)
-- [仿 Express | Github - wallaceyuan](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fwallaceyuan%2Fyuan-express)
-- [Node.js 封装仿照 express 的路由 | CSDN - c.](https://link.juejin.cn/?target=https%3A%2F%2Fblog.csdn.net%2Fcckevincyh%2Farticle%2Fdetails%2F78695177)
-- [学习node中express框架中间件的相关知识及实践 | Github - BadWaka](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2FBadWaka%2Fnode-express-middleware-study)
-
-## [七 线上部署](https://link.juejin.cn/?target=undefined)
-
-> [返回目录](https://juejin.cn/post/6844903745755545614#catalog-chapter-seven)
-
- 关于线上部署及域名、服务器相关的配置，**wujf** 在另外一篇文章有所交代：[云服务器建站](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2FLiangJunrong%2Fdocument-library)。
-
- 如果小伙伴需要订购云服务器来存放像 wujf 个人网站类的静态或者有 Node 后端的网页，但却不知道怎么选择，可以加 **wujf** QQ：`1741020489` 咨询，下面是一些优惠推广：
-
- **腾讯云推广**：
-
- 新用户点这里：
-
-- 新客户无门槛 2775 元代金券
-
-  ![img](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/12/25/167e2c70d0376e68~tplv-t2oaga2asx-watermark.awebp)
-
- 购买云服务器：
-
-- 12 月优惠低至 168 元/年
-
-  ![img](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/12/25/167e2c7d4e1ea4f0~tplv-t2oaga2asx-watermark.awebp)
-
-
-
- **阿里云推广**：
-
- 新用户点这里：
-
-- 新用户云产品 1888 通用代金券
-
-  ![img](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/12/25/167e2c84a3c2cde4~tplv-t2oaga2asx-watermark.awebp)
-
- 购买云服务器：
-
-- 高性能云服务器 - 低至 293元/年
-
-  ![img](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/12/25/167e2c8c17693c71~tplv-t2oaga2asx-watermark.awebp)
-
- 购买企业级云服务器：
-
-- 企业级高性能云服务器
-
-  ![img](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/12/25/167e2c934dada38a~tplv-t2oaga2asx-watermark.awebp)
-
-## [八 归纳总结](https://link.juejin.cn/?target=undefined)
-
-> [返回目录](https://juejin.cn/post/6844903745755545614#catalog-chapter-eight)
-
- 综上，搞定一切！
- 兴许在前面代码的摧残下，能看到这里的小伙伴已经寥寥无几了，但我坚信我该交代的基本都交代了，不该交代的也交代了~
- 所以，如果小伙伴看完真觉得不错，那就点个赞或者给个 star 吧！你们的赞和 star 是我编写更多更精彩文章的动力！[GitHub 地址](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2FLiangJunrong%2Fdocument-library)
-
- 如果小伙伴看完这里要评论的话，可以加个暗语：`Node 基础，***`，这样 **wujf** 看到必回，哈哈~
-
-- Node 基础，我完成了！
-- Node 基础，我想说 wujf 肯定还偷懒了，没写成最完美的，我不管我打赏了你赶紧给我完善下！
-- ……
-
- **so, that's all, thanks~**
-
-*-----------------------*
-
-## 后记
-
-**撰文不易，如果文章对小伙伴有帮助，希望小伙伴们给勤劳敲代码、辛苦撰文的 wujf 进行微信/支付宝打赏，你们的每一次打赏都是最好的鼓励，谢谢~**
-
-
-
-![img](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/12/23/167db5346ad6c037~tplv-t2oaga2asx-watermark.awebp)
-
-
-
-
-
-![img](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/12/23/167db537a115c675~tplv-t2oaga2asx-watermark.awebp)
-
-
-
-> [![知识共享许可协议](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/12/23/167d9537f3e29c99~tplv-t2oaga2asx-watermark.awebp)](https://link.juejin.cn/?target=http%3A%2F%2Fcreativecommons.org%2Flicenses%2Fby-nc-sa%2F4.0%2F)
-> [**wujf** 的文档库](https://link.juejin.cn/?target=undefined) 由 [wujf](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2FLiangJunrong%2Fdocument-library) 采用 [知识共享 署名-非商业性使用-相同方式共享 4.0 国际 许可协议](https://link.juejin.cn/?target=http%3A%2F%2Fcreativecommons.org%2Flicenses%2Fby-nc-sa%2F4.0%2F)进行许可。
-> 基于[github.om/LiangJunron…](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2FLiangJunrong%2Fdocument-library)上的作品创作。
-> 本许可协议授权之外的使用权限可以从 [creativecommons.org/licenses/by…](https://link.juejin.cn/?target=https%3A%2F%2Fcreativecommons.org%2Flicenses%2Fby-nc-sa%2F2.5%2Fcn%2F) 处获得。
-
-分类：
-
-[前端](https://juejin.cn/frontend)
-
-标签：
-
-[Node.js](https://juejin.cn/tag/Node.js)
-
-
-
-[安装掘金浏览器插件](https://juejin.cn/extension/?utm_source=standalone&utm_medium=post&utm_campaign=extension_promotion)
-
-多内容聚合浏览、多引擎快捷搜索、多工具便捷提效、多模式随心畅享，你想要的，这里都有！
-
-[前往安装](https://juejin.cn/extension/?utm_source=standalone&utm_medium=post&utm_campaign=extension_promotion)
-
-评论
-
-![img](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8AQMAAAAAMksxAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjAAcAAAIcAAE27nY6AAAAAElFTkSuQmCC)
-
-热门评论
-
-[![小桔的头像](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8AQMAAAAAMksxAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjAAcAAAIcAAE27nY6AAAAAElFTkSuQmCC)](https://juejin.cn/user/1732486055333975)
-
-[小桔![lv-1](https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/636691cd590f92898cfcda37357472b8.svg)](https://juejin.cn/user/1732486055333975)
-
-前端工程师 @ 小🍊3年前
-
-小白问一下哈，index.html是怎么打开的呢，localhost:8888/index.html吗？打不开~
-
-1
-
-3
-
-[![img](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8AQMAAAAAMksxAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjAAcAAAIcAAE27nY6AAAAAElFTkSuQmCC)](https://juejin.cn/user/1556564196984456)
-
-[thesixgod](https://juejin.cn/user/1556564196984456)
-
-2年前
-
-双击打开
-
-点赞
-
-回复
-
-[![img](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8AQMAAAAAMksxAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjAAcAAAIcAAE27nY6AAAAAElFTkSuQmCC)](https://juejin.cn/user/1732486055333975)
-
-[小桔![lv-1](https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/636691cd590f92898cfcda37357472b8.svg)](https://juejin.cn/user/1732486055333975)
-
-回复
-
-[thesixgod](https://juejin.cn/user/1556564196984456)
-
-2年前
-
-直接本地文件夹打开啊~，接口不响应呢
-
-“
-
-双击打开
-
-”
-
-点赞
-
-回复
-
-查看更多回复
-
-[![李二狗子的头像](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8AQMAAAAAMksxAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjAAcAAAIcAAE27nY6AAAAAElFTkSuQmCC)](https://juejin.cn/user/2647279730451389)
-
-[李二狗子![lv-2](https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/f597b88d22ce5370bd94495780459040.svg)](https://juejin.cn/user/2647279730451389)
-
-脑力民工3年前
-
-6666
-
-1
-
-3
-
-[![img](https://p9-passport.byteacctimg.com/img/user-avatar/fae2936a68be7eac2c5477f18a875fb2~300x300.image)](https://juejin.cn/user/3403743728515246)
-
-[wujf![lv-6](https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/74bd93adef7feff4fee26d08c0845b4f.svg)](https://juejin.cn/user/3403743728515246)
-
-（作者）3年前
-
-777
-
-点赞
-
-回复
-
-[![img](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8AQMAAAAAMksxAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjAAcAAAIcAAE27nY6AAAAAElFTkSuQmCC)](https://juejin.cn/user/3403743730872728)
-
-[lulubing](https://juejin.cn/user/3403743730872728)
-
-回复
-
-[wujf](https://juejin.cn/user/3403743728515246)
-
-3年前
-
-88
-
-“
-
-777
-
-”
-
-点赞
-
-回复
-
-查看更多回复
-
-全部评论 175
-
-最新
-
-最热
-
-[![要瘦十斤呀的头像](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8AQMAAAAAMksxAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjAAcAAAIcAAE27nY6AAAAAElFTkSuQmCC)](https://juejin.cn/user/2920776771049965)
-
-[要瘦十斤呀](https://juejin.cn/user/2920776771049965)
-
-前端工程师6月前
-
-收藏这篇文章很久了，最近对node 、mysql稍微悟了那么些，这两天又来看看，总于看完了，很有用![[赞]](https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/img/jj_emoji_108.a6defc6.png)
-
-点赞
-
-1
-
-[![img](https://p9-passport.byteacctimg.com/img/user-avatar/fae2936a68be7eac2c5477f18a875fb2~300x300.image)](https://juejin.cn/user/3403743728515246)
-
-[wujf![lv-6](https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/74bd93adef7feff4fee26d08c0845b4f.svg)](https://juejin.cn/user/3403743728515246)
-
-（作者）6月前
-
-加油，后面我再整理下这块内容，感谢小伙伴们长期以来的支持
-
-点赞
-
-回复
-
-[![我只有睡觉的时候不困的头像](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8AQMAAAAAMksxAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjAAcAAAIcAAE27nY6AAAAAElFTkSuQmCC)](https://juejin.cn/user/2762417732069373)
-
-[我只有睡觉的时候不困![lv-1](https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/636691cd590f92898cfcda37357472b8.svg)](https://juejin.cn/user/2762417732069373)
-
-8月前
-
-推荐试一下 needhub.cn这个网站，安装部署node很方便，把你的docker镜像上传，还可以获得收益。
-
-点赞
-
-2
-
-[![img](https://p9-passport.byteacctimg.com/img/user-avatar/fae2936a68be7eac2c5477f18a875fb2~300x300.image)](https://juejin.cn/user/3403743728515246)
-
-[wujf![lv-6](https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/74bd93adef7feff4fee26d08c0845b4f.svg)](https://juejin.cn/user/3403743728515246)
-
-（作者）8月前
-
-哈哈
-
-点赞
-
-回复
-
-[![img](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8AQMAAAAAMksxAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjAAcAAAIcAAE27nY6AAAAAElFTkSuQmCC)](https://juejin.cn/user/325111173893310)
-
-[奋斗中的闲鱼](https://juejin.cn/user/325111173893310)
-
-7月前
-
-这个网站是干嘛的呀？
-
-点赞
-
-回复
-
-[![jasonl的头像](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8AQMAAAAAMksxAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjAAcAAAIcAAE27nY6AAAAAElFTkSuQmCC)](https://juejin.cn/user/175536178991661)
-
-[jasonl](https://juejin.cn/user/175536178991661)
-
-9月前
-
-很适合新手入门的demo，点个赞
-
-1
-
-1
-
-[![img](https://p9-passport.byteacctimg.com/img/user-avatar/fae2936a68be7eac2c5477f18a875fb2~300x300.image)](https://juejin.cn/user/3403743728515246)
-
-[wujf![lv-6](https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/74bd93adef7feff4fee26d08c0845b4f.svg)](https://juejin.cn/user/3403743728515246)
-
-（作者）9月前
-
-后续正在更新
-
-1
-
-回复
-
-[![北落师门1856的头像](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8AQMAAAAAMksxAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjAAcAAAIcAAE27nY6AAAAAElFTkSuQmCC)](https://juejin.cn/user/2594503171772445)
-
-[北落师门1856![lv-1](https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/636691cd590f92898cfcda37357472b8.svg)](https://juejin.cn/user/2594503171772445)
-
-前端工程师 @ CERN11月前
-
-fs案例那一段 我这边敲出来直接报错了(function getFile(i) { // 循环结束 if(i == files.length) { // 打印出所有目录 console.log("目录："); console.log(filesArr); return false; } // 判断目录是文件还是文件夹 fs.stat('node_modules/' + files[i], (error, stats) => { if(stats.isDirectory()) { filesArr.push(files[i]); } // 递归调用 getFile(i+1); }) })(0)
-
-![img](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8AQMAAAAAMksxAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjAAcAAAIcAAE27nY6AAAAAElFTkSuQmCC)
-
-点赞
-
-回复
-
-[![种草的头像](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8AQMAAAAAMksxAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjAAcAAAIcAAE27nY6AAAAAElFTkSuQmCC)](https://juejin.cn/user/3544481220275086)
-
-[种草](https://juejin.cn/user/3544481220275086)
-
-落魄前端1年前
-
-云服务器建站的地址文章能给一下嘛，文章里地址没找到
-
-点赞
-
-回复
-
-[![前端snow的头像](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8AQMAAAAAMksxAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjAAcAAAIcAAE27nY6AAAAAElFTkSuQmCC)](https://juejin.cn/user/1714893871392792)
-
-[前端snow![lv-2](https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/f597b88d22ce5370bd94495780459040.svg)](https://juejin.cn/user/1714893871392792)
-
-前端开发1年前
-
-谢谢
-
-点赞
-
-回复
-
-[![ok兄弟们的头像](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8AQMAAAAAMksxAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjAAcAAAIcAAE27nY6AAAAAElFTkSuQmCC)](https://juejin.cn/user/430664286474504)
-
-[ok兄弟们](https://juejin.cn/user/430664286474504)
-
-2年前
-
-Mark
-
-2
-
-回复
-
-[![旅梦开发团的头像](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8AQMAAAAAMksxAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjAAcAAAIcAAE27nY6AAAAAElFTkSuQmCC)](https://juejin.cn/user/2664871913601613)
-
-[旅梦开发团![lv-3](https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/e108c685147dfe1fb03d4a37257fb417.svg)](https://juejin.cn/user/2664871913601613)
-
-前端工程师 @ 旅梦开发团2年前
-
-请问我可以根据您的文章录制视屏吗？
-
-点赞
-
-回复
-
-[![Swag同学的头像](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8AQMAAAAAMksxAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjAAcAAAIcAAE27nY6AAAAAElFTkSuQmCC)](https://juejin.cn/user/782508011817287)
-
-[Swag同学](https://juejin.cn/user/782508011817287)
-
-前端 @ 某不知名电商平台2年前
-
-大佬，有些部署线上的问题，加你qq要问题，可以联系一下吗
-
-点赞
-
-回复
-
-[![黑塔职业规划的头像](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8AQMAAAAAMksxAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjAAcAAAIcAAE27nY6AAAAAElFTkSuQmCC)](https://juejin.cn/user/8451821676590)
-
-[黑塔职业规划](https://juejin.cn/user/8451821676590)
-
-2年前
-
-有个合作能谈一下嘛？wx15290834976
-
-点赞
-
-回复
-
-[![遇白不散的头像](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8AQMAAAAAMksxAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjAAcAAAIcAAE27nY6AAAAAElFTkSuQmCC)](https://juejin.cn/user/1556564196204749)
-
-[遇白不散![lv-1](https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/636691cd590f92898cfcda37357472b8.svg)](https://juejin.cn/user/1556564196204749)
-
-前端散人2年前
-
-没有http之前的net模块唉～应该顺着说到express，嘿嘿
-
-点赞
-
-回复
-
-[![叁七的头像](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8AQMAAAAAMksxAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjAAcAAAIcAAE27nY6AAAAAElFTkSuQmCC)](https://juejin.cn/user/4212984286033431)
-
-[叁七](https://juejin.cn/user/4212984286033431)
-
-打杂工程师2年前
-
-大佬，能不能说一下这个地方 “这样子，就导致了一个问题：步骤 3 可能拿不到步骤 2 的执行结果了！这就是 Node 的非租塞性 I/O 驱动。” 结果不是拿到了么？
-
-点赞
-
-2
-
-[![img](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8AQMAAAAAMksxAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjAAcAAAIcAAE27nY6AAAAAElFTkSuQmCC)](https://juejin.cn/user/1679709496941991)
-
-[TechCheng![lv-1](https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/636691cd590f92898cfcda37357472b8.svg)](https://juejin.cn/user/1679709496941991)
-
-2年前
-
-这句话意思是：当console.log(3)时候，步骤2的异步还没执行，自然步骤3执行的时候，怎么能获取到步骤2的结果呢？？？？
-
-点赞
-
-回复
-
-[![img](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8AQMAAAAAMksxAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjAAcAAAIcAAE27nY6AAAAAElFTkSuQmCC)](https://juejin.cn/user/4212984286033431)
-
-[叁七](https://juejin.cn/user/4212984286033431)
-
-回复
-
-[TechCheng](https://juejin.cn/user/1679709496941991)
-
-2年前
-
-感谢
-
-“
-
-这句话意思是：当console.log(3)时候，步骤2的异步还没执行，自然步骤3执行的时候，怎么能获取到步骤2的结果呢？？？？
-
-”
-
-点赞
-
-回复
-
-[![无与伦比小烟烟的头像](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8AQMAAAAAMksxAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjAAcAAAIcAAE27nY6AAAAAElFTkSuQmCC)](https://juejin.cn/user/2612095359917047)
-
-[无与伦比小烟烟![lv-1](https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/636691cd590f92898cfcda37357472b8.svg)](https://juejin.cn/user/2612095359917047)
-
-前端开发 @ 完美世界2年前
-
-写的很细致，非常适合入门！但是强迫症的我还是忍不住想反馈multiply的初始化sum应该为1吧哈哈哈，无伤大雅，可以忽略此条tip![😁](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-assets/asset/twemoji/2.6.0/svg/1f601.svg~tplv-t2oaga2asx-image.image)
-
-1
-
-回复
-
-[![wangdian123的头像](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8AQMAAAAAMksxAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjAAcAAAIcAAE27nY6AAAAAElFTkSuQmCC)](https://juejin.cn/user/1046390801704957)
-
-[wangdian123](https://juejin.cn/user/1046390801704957)
-
-2年前
-
-先Mark一下
-
-点赞
-
-回复
-
-[![tool的头像](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8AQMAAAAAMksxAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjAAcAAAIcAAE27nY6AAAAAElFTkSuQmCC)](https://juejin.cn/user/1134351728277966)
-
-[tool![lv-1](https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/636691cd590f92898cfcda37357472b8.svg)](https://juejin.cn/user/1134351728277966)
-
-前端开发工程师 @ 兑吧集团2年前
-
-为啥我看文章感觉都很简单 但是面试题都很难
-
-点赞
-
-回复
-
-[![在人间同学的头像](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8AQMAAAAAMksxAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjAAcAAAIcAAE27nY6AAAAAElFTkSuQmCC)](https://juejin.cn/user/624178336120391)
-
-[在人间同学](https://juejin.cn/user/624178336120391)
-
-2年前
-
-下载的最新的mysql node连接mysql那一块，启动index.js的时候报错: Client does not support authentication protocol requested by server; consider upgrading MySQL client 怎么处理啊？
-
-点赞
-
-1
-
-[![img](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8AQMAAAAAMksxAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjAAcAAAIcAAE27nY6AAAAAElFTkSuQmCC)](https://juejin.cn/user/2717648476709934)
-
-[lrxu](https://juejin.cn/user/2717648476709934)
-
-2年前
-
-在mysql的dos界面下执行 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '******'; 注意加上分号。三个变量，第一个数据库名，第二个ip，也就是本地地址，第三个就是你的密码。最后在重新跑一下index.js
-
-点赞
-
-回复
-
-[![十年一个未来的头像](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8AQMAAAAAMksxAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjAAcAAAIcAAE27nY6AAAAAElFTkSuQmCC)](https://juejin.cn/user/2647279729914935)
-
-[十年一个未来](https://juejin.cn/user/2647279729914935)
-
-Java开发工程师2年前
-
-已撸完，简单体验下node
-
-2
-
-回复
-
-[![XMG的头像](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8AQMAAAAAMksxAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjAAcAAAIcAAE27nY6AAAAAElFTkSuQmCC)](https://juejin.cn/user/4054654612681096)
-
-[XMG](https://juejin.cn/user/4054654612681096)
-
-2年前
-
-3.8那一步静态资源的图片是怎么加载出来的，能说一下么
-
-点赞
-
-回复
-
-[![YBFacc69205的头像](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8AQMAAAAAMksxAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjAAcAAAIcAAE27nY6AAAAAElFTkSuQmCC)](https://juejin.cn/user/2400989126591160)
-
-[YBFacc69205](https://juejin.cn/user/2400989126591160)
-
-cv艺术家2年前
-
-学习了 感谢分享
-
-点赞
-
-回复
-
-[![Round22503的头像](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8AQMAAAAAMksxAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjAAcAAAIcAAE27nY6AAAAAElFTkSuQmCC)](https://juejin.cn/user/3667626519962343)
-
-[Round22503](https://juejin.cn/user/3667626519962343)
-
-搬砖2年前
-
-看到了mysql了让我缓缓....![😂](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-assets/asset/twemoji/2.6.0/svg/1f602.svg~tplv-t2oaga2asx-image.image)
-
-1
-
-回复
-
-查看全部 175 条回复
-
-相关推荐
-
-[爱编程的北极熊](https://juejin.cn/user/2330620381889806)
-
-2年前
-
-[Node.js](https://juejin.cn/tag/Node.js)
-
-[Node.js后端开发系列之sequelize零基础快速入门实战](https://juejin.cn/post/6844904052313030664)
-
-- 3970
-- 42
-- 7
-
-[洛竹](https://juejin.cn/user/325111174662855)
-
-10月前
-
-[Node.js](https://juejin.cn/tag/Node.js)[掘金翻译计划](https://juejin.cn/tag/掘金翻译计划)
-
-[2021 年最值得使用的 Node.js 框架](https://juejin.cn/post/6955402195311263751)
-
-- 2.6w
-- 209
-- 51
-
-[CoyPan](https://juejin.cn/user/166781497387390)
-
-1年前
-
-[Node.js](https://juejin.cn/tag/Node.js)
-
-[一年Node.js开发经验总结](https://juejin.cn/post/6858910962339856397)
-
-- 2.5w
-- 339
-- 45
-
-[zxg_神说要有光](https://juejin.cn/user/2788017216685118)
-
-2月前
-
-[前端](https://juejin.cn/tag/前端)[JavaScript](https://juejin.cn/tag/JavaScript)[Node.js](https://juejin.cn/tag/Node.js)
-
-[JS 的 6 种打断点的方式，你用过几种？](https://juejin.cn/post/7041946855592165389)
-
-- 2.4w
-- 350
-- 33
-
-[Alone381](https://juejin.cn/user/1679709496674295)
-
-3年前
-
-[Node.js](https://juejin.cn/tag/Node.js)[前端](https://juejin.cn/tag/前端)
-
-[前端的焦虑，你想过30岁以后的前端路怎么走吗？](https://juejin.cn/post/6844903615681806344)
-
-- 4.2w
-- 636
-- 341
-
-[尤水就下](https://juejin.cn/user/3157453124156439)
-
-2年前
-
-[Node.js](https://juejin.cn/tag/Node.js)
-
-[有助于理解前端工具的 node 知识](https://juejin.cn/post/6844903848654585870)
-
-- 1.7w
-- 384
-- 25
-
-[hpoenixf](https://juejin.cn/user/3808364007276040)
-
-3年前
-
-[Node.js](https://juejin.cn/tag/Node.js)[JavaScript](https://juejin.cn/tag/JavaScript)[HTTP](https://juejin.cn/tag/HTTP)
-
-[当面试官问你如何进行性能优化时，你该这么回答](https://juejin.cn/post/6844903569154375693)
-
-- 3.3w
-- 1520
-- 44
-
-[yck](https://juejin.cn/user/712139233840407)
-
-10月前
-
-[JavaScript](https://juejin.cn/tag/JavaScript)[前端](https://juejin.cn/tag/前端)
-
-[17K star 仓库，解决 90% 的大厂基础面试题](https://juejin.cn/post/6947860760840110088)
-
-- 7.7w
-- 2892
-- 137
-
-[第一名的小蝌蚪](https://juejin.cn/user/2629687542294462)
-
-1年前
-
-[JavaScript](https://juejin.cn/tag/JavaScript)[Node.js](https://juejin.cn/tag/Node.js)
-
-[小蝌蚪传记：前端菜鸟让接口提速60%的优化技巧](https://juejin.cn/post/6893286451711049742)
-
-- 2.9w
-- 569
-- 251
-
-[清一色天空](https://juejin.cn/user/1996368846268334)
-
-4年前
-
-[Node.js](https://juejin.cn/tag/Node.js)[JavaScript](https://juejin.cn/tag/JavaScript)[前端](https://juejin.cn/tag/前端)
-
-[JS维护nginx反向代理，妈妈再也不用担心我跨域了！](https://juejin.cn/post/6844903537873272846)
-
-- 2.0w
-- 1081
-- 78
-
-[炽翎](https://juejin.cn/user/3122268753634541)
-
-1年前
-
-[Node.js](https://juejin.cn/tag/Node.js)
-
-[写给前端的 Nest.js 教程——10分钟上手后端接口开发](https://juejin.cn/post/6885751452015263758)
-
-- 2.8w
-- 514
-- 90
-
-[muwoo](https://juejin.cn/user/3298190611978526)
-
-3年前
-
-[Node.js](https://juejin.cn/tag/Node.js)[Vue.js](https://juejin.cn/tag/Vue.js)[前端](https://juejin.cn/tag/前端)
-
-[厌倦了写活动页？快来撸一个页面生成器吧！](https://juejin.cn/post/6844903700327038984)
-
-- 2.0w
-- 573
-- 41
-
-[rianma](https://juejin.cn/user/2735240659343022)
-
-3年前
-
-[Node.js](https://juejin.cn/tag/Node.js)[NPM](https://juejin.cn/tag/NPM)[Webpack](https://juejin.cn/tag/Webpack)
-
-[2018 年了，你还是只会 npm install 吗？](https://juejin.cn/post/6844903582337237006)
-
-- 10.5w
-- 1663
-- 69
-
-[With](https://juejin.cn/user/2541726613120200)
-
-3年前
-
-[前端](https://juejin.cn/tag/前端)
-
-[仿美团外卖的全栈项目(vue+node+mongodb)带支付->大三求实习](https://juejin.cn/post/6844903589148639239)
-
-- 3.5w
-- 936
-- 315
-
-[我是你的超级英雄](https://juejin.cn/user/4054654613718350)
-
-2年前
-
-[Node.js](https://juejin.cn/tag/Node.js)[前端](https://juejin.cn/tag/前端)
-
-[一个开箱即用，功能完善的 Express 项目](https://juejin.cn/post/6844904022080651277)
-
-- 2.5w
-- 546
-- 76
-
-[接水怪](https://juejin.cn/user/747323638163768)
-
-1年前
-
-[Node.js](https://juejin.cn/tag/Node.js)
-
-[《大前端进阶 Node.js》系列 P6必备脚手架/CI构建能力（上）](https://juejin.cn/post/6844904101893898248)
-
-- 2.2w
-- 568
-- 53
-
-[黄小虫](https://juejin.cn/user/1327865774742830)
-
-2年前
-
-[JavaScript](https://juejin.cn/tag/JavaScript)
-
-[2020年了,再不会webpack敲得代码就不香了(近万字实战)](https://juejin.cn/post/6844904031240863758)
-
-- 16.1w
-- 4294
-- 368
-
-[殷荣桧](https://juejin.cn/user/1151943915355742)
-
-3年前
-
-[React.js](https://juejin.cn/tag/React.js)[Node.js](https://juejin.cn/tag/Node.js)[Vue.js](https://juejin.cn/tag/Vue.js)
-
-[看看这些被同事喷的JS代码风格你写过多少](https://juejin.cn/post/6844903714164047879)
-
-- 4.5w
-- 997
-- 194
-
-[天明夜尽](https://juejin.cn/user/1679709496157048)
-
-9月前
-
-[Node.js](https://juejin.cn/tag/Node.js)[JavaScript](https://juejin.cn/tag/JavaScript)
-
-[推荐 9 个 Node.js 学习、进阶、debugging 分析、实战 的重磅开源项目 👍](https://juejin.cn/post/6961101653709684772)
-
-- 1.6w
-- 624
-- 10
-
-[孟祥_成都](https://juejin.cn/user/96412752684744)
-
-2年前
-
-[Node.js](https://juejin.cn/tag/Node.js)
-
-[NodeJS有难度的面试题，你能答对几个？](https://juejin.cn/post/6844903951742025736)
-
-- 2.8w
-- 566
-- 26
-
-[![img](https://p9-passport.byteacctimg.com/img/user-avatar/fae2936a68be7eac2c5477f18a875fb2~300x300.image)](https://juejin.cn/user/3403743728515246)
-
-[wujf![lv-6](https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/74bd93adef7feff4fee26d08c0845b4f.svg)](https://juejin.cn/user/3403743728515246)
-
-联系方式看个人主页 @ 金山办公软件
-
-获得点赞 14,106
-
-文章被阅读 877,312
-
-[![img](https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/img/article.acd26aa.png)下载稀土掘金APP一个帮助开发者成长的社区](https://juejin.cn/app)
-
-![img](https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/img/default.640d9a7.png)
-
-相关文章
-
-[Node.js后端开发系列之sequelize零基础快速入门实战42点赞 · 7评论](https://juejin.cn/post/6844904052313030664)[2019 面试准备 - JS 原型与原型链1083点赞 · 80评论](https://juejin.cn/post/6844903782229213197)[wujf 求职系列 - 02 - 原型与原型链72点赞 · 20评论](https://juejin.cn/post/6890716797436166152)[node实战前端缓存总结31点赞 · 4评论](https://juejin.cn/post/6844903810393964551)[wujf 求职系列 - 15 - 手写源码系列汇总18点赞 · 0评论](https://juejin.cn/post/6895676184949227528)
-
-目录
-
-- [本文重点内容](https://juejin.cn/post/6844903745755545614#heading-0)
-- [本文延伸链接](https://juejin.cn/post/6844903745755545614#heading-1)
-- [本文成品演示](https://juejin.cn/post/6844903745755545614#heading-2)
-- [一 目录](https://juejin.cn/post/6844903745755545614#heading-3)
-- [二 前言](https://juejin.cn/post/6844903745755545614#heading-4)
-- [三 基础](https://juejin.cn/post/6844903745755545614#heading-5)
-  - [3.1 HTTP - 开始 Node 之旅](https://juejin.cn/post/6844903745755545614#heading-6)
-  - [3.2 URL 模块](https://juejin.cn/post/6844903745755545614#heading-7)
-  - [3.3 CommonJS](https://juejin.cn/post/6844903745755545614#heading-8)
-  - [3.4 包与 npm](https://juejin.cn/post/6844903745755545614#heading-9)
-  - [3.5 fs 文件管理](https://juejin.cn/post/6844903745755545614#heading-10)
-  - [3.6 fs 案例](https://juejin.cn/post/6844903745755545614#heading-11)
-  - [3.7 fs 流](https://juejin.cn/post/6844903745755545614#heading-12)
-  - [3.8 创建 Web 服务器](https://juejin.cn/post/6844903745755545614#heading-13)
-  - [3.9 非阻塞 I/O 事件驱动](https://juejin.cn/post/6844903745755545614#heading-14)
-  - [3.10 get 与 post](https://juejin.cn/post/6844903745755545614#heading-15)
-  - [3.11 Node 连接 MySQL](https://juejin.cn/post/6844903745755545614#heading-16)
-- [四 Web 实战 —— 企业官网](https://juejin.cn/post/6844903745755545614#heading-17)
-  - [4.1 编程环境](https://juejin.cn/post/6844903745755545614#heading-18)
-  - [4.2 后端接口](https://juejin.cn/post/6844903745755545614#heading-19)
-  - [4.3 注册功能](https://juejin.cn/post/6844903745755545614#heading-20)
-  - [4.4 登录功能](https://juejin.cn/post/6844903745755545614#heading-21)
-  - [4.5 留言功能](https://juejin.cn/post/6844903745755545614#heading-22)
-- [五 工具整合](https://juejin.cn/post/6844903745755545614#heading-23)
-  - [5.1 supervisor - 监听 Node 改动](https://juejin.cn/post/6844903745755545614#heading-24)
-  - [5.2 PM2 - Node 进程管理](https://juejin.cn/post/6844903745755545614#heading-25)
-- [六 参考资料](https://juejin.cn/post/6844903745755545614#heading-26)
-- [七 线上部署](https://juejin.cn/post/6844903745755545614#heading-27)
-- [八 归纳总结](https://juejin.cn/post/6844903745755545614#heading-28)
-- [后记](https://juejin.cn/post/6844903745755545614#heading-29)
