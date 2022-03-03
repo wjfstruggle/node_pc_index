@@ -743,6 +743,8 @@ fs.mkdir('css', (err) => {
 
  通过 `node 05_fs.js`，我们发现目录中多了一个 `css` 文件夹。
 
+![image.png](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8273e846619c4cf29d3bbcfa5f97ba97~tplv-k3u1fbpfcp-watermark.image?)
+
  **那么**，有创建就有删除，创建的目录如何删除呢？这里讲解下 `fs.rmdir`：
 
 > 05_fs.js
@@ -762,8 +764,8 @@ fs.rmdir('css', (err) => {
     console.log(err);
     return false;
   } else {
-    console.log("创建目录成功！");
-    // Console：创建目录成功！
+    console.log("删除目录成功！");
+    // Console：删除目录成功！
   }
 })
 ```
@@ -823,7 +825,7 @@ fs.appendFile('index.js', '这段文本是要追加的内容', (err) => {
 > index.js
 
 ```js
-Hello jsliang这段文本是要追加的内容
+Hello wujf这段文本是要追加的内容
 ```
 
  **在上面**，我们已经做了：新增、修改、删除操作。那么小伙伴一定很熟悉下一步骤是做什么了：
@@ -915,12 +917,6 @@ fs.rename('wujf.js', 'node_modules/wujf.js', (err) => {
 })
 ```
 
- OK，通通搞定，现在目录变成了：
-
-
-
-![img](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/12/23/167db4968b350f54~tplv-t2oaga2asx-watermark.awebp)
-
 
 
 ### [3.6 fs 案例](https://link.juejin.cn/?target=undefined)
@@ -1008,8 +1004,6 @@ fs.readdir('node_modules', (err, files) => {
 ```
 
 ### [3.7 fs 流](https://link.juejin.cn/?target=undefined)
-
-> [返回目录](https://juejin.cn/post/6844903745755545614#catalog-chapter-three-seven)
 
  话不多说，我们了解下 `fs` 流及其读取：
 
