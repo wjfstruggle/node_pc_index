@@ -1073,8 +1073,6 @@ writeStream.on('finish', () => {
 
 ### [3.8 创建 Web 服务器](https://link.juejin.cn/?target=undefined)
 
-> [返回目录](https://juejin.cn/post/6844903745755545614#catalog-chapter-three-eight)
-
  在这里，我们利用 http 模块、url 模块、path 模块、fs 模块创建一个 Web 服务器。
 
  什么是 Web 服务器？
@@ -1084,13 +1082,13 @@ writeStream.on('finish', () => {
 
 
 
-![img](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/12/23/167db499027a9b6a~tplv-t2oaga2asx-watermark.awebp)
+![image.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fd75fb28ee67450985f88d7b499be1b7~tplv-k3u1fbpfcp-watermark.image?)
 
 
 
-> 08_WebService.js
+> WebService.js
 
-```
+```js
 // 引入 http 模块
 let http = require("http");
 
@@ -1109,14 +1107,14 @@ http.createServer((req, res) => {
 
   // 过滤 /favicon.ico 的请求
   if (pathName != "/favicon.ico") {
-    // 获取 08_WebService 下的 index.html
-    fs.readFile("./08_WebService/" + pathName, (err, data) => {
+    // 获取 WebService 下的 index.html
+    fs.readFile("./WebService/" + pathName, (err, data) => {
       if (err) {
         
         // 如果不存在这个文件
         
         console.log("404 Not Found!");
-        fs.readFile('./08_WebService/404.html', (errorNotFound, dataNotFound) => {
+        fs.readFile('./WebService/404.html', (errorNotFound, dataNotFound) => {
           if(errorNotFound) {
             console.log(errorNotFound);
           } else {
@@ -1152,16 +1150,16 @@ http.createServer((req, res) => {
 
 
 
-![img](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/12/23/167db49cdf6207cf~tplv-t2oaga2asx-watermark.awebp)
+![image.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1f05be7ebcdf4d0eb7c3fb837dc77e32~tplv-k3u1fbpfcp-watermark.image?)
 
 
 
  好家伙，感情它就加载了整个 `index.html` 文件，连 CSS 这些没引入么？
  所以，下一步，我们要动态加载 `html`、`css` 以及 `js`：
 
-> 08_WebService.js
+> WebService.js
 
-```
+```js
 // 引入 http 模块
 let http = require("http");
 
@@ -1190,13 +1188,13 @@ http.createServer((req, res) => {
 
   // 过滤 /favicon.ico 的请求
   if (pathName != "/favicon.ico") {
-    // 获取 08_WebService 下的 index.html
-    fs.readFile("./08_WebService/" + pathName, (err, data) => {
+    // 获取 WebService 下的 index.html
+    fs.readFile("./WebService/" + pathName, (err, data) => {
       // 如果不存在这个文件
       if (err) {
         console.log("404 Not Found!");
         fs.readFile(
-          "./08_WebService/404.html",
+          "./WebService/404.html",
           (errorNotFound, dataNotFound) => {
             if (errorNotFound) {
               console.log(errorNotFound);
@@ -1242,14 +1240,6 @@ getExt = (extName) => {
 }
 ```
 
- 这样，当我们再次请求的时候，浏览器就变成了：
-
-
-
-![img](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/12/23/167db4a2ba76f9ad~tplv-t2oaga2asx-watermark.awebp)
-
-
-
  当然，在上面，我们仅仅模拟了 `html`、`css`、`js` 这三种文件类型而已，我们需要模拟更多的文件类型：
 
 > [08_ext.json](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2FLiangJunrong%2FNode%2Fblob%2Fmaster%2FNodeBase%2F08_ext.json)
@@ -1260,15 +1250,13 @@ getExt = (extName) => {
 
  在上面的 `json` 文件中，我们定义了各种的文件类型，此刻文件目录如下所示：
 
-
-
-![img](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/12/23/167db4ab7f829e99~tplv-t2oaga2asx-watermark.awebp)
+![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5843690e895740d78210851e288702b3~tplv-k3u1fbpfcp-watermark.image?)
 
 
 
  这时候，我们需要修改下我们的 `js` 文件，让它适应多种请求响应了：
 
-> 08_WebService.js
+> WebService.js
 
 ```js
 // 引入 http 模块
@@ -1300,12 +1288,12 @@ http.createServer((req, res) => {
   // 过滤 /favicon.ico 的请求
   if (pathName != "/favicon.ico") {
     // 获取 08_WebService 下的 index.html
-    fs.readFile("./08_WebService/" + pathName, (err, data) => {
+    fs.readFile("./WebService/" + pathName, (err, data) => {
       // 如果不存在这个文件
       if (err) {
         console.log("404 Not Found!");
         fs.readFile(
-          "./08_WebService/404.html",
+          "./WebService/404.html",
           (errorNotFound, dataNotFound) => {
             if (errorNotFound) {
               console.log(errorNotFound);
@@ -1354,8 +1342,6 @@ getExt = (extName) => {
 
 ### [3.9 非阻塞 I/O 事件驱动](https://link.juejin.cn/?target=undefined)
 
-> [返回目录](https://juejin.cn/post/6844903745755545614#catalog-chapter-three-night)
-
  Java、PHP 或者 .NET 等服务端语言，会为每一个客户端的连接创建一个新的线程。
  Node 不会为每一个客户连接创建一个新的线程，而仅仅使用一个线程。
  当有用户连接了，就会触发一个内部事件，通过非租塞 I/O、事件驱动机制，让 Node 程序宏观上也是并行的。
@@ -1391,25 +1377,22 @@ console.log("3");
 > 09_io.js
 
 ```js
-console.log("1");
+const fs = require("fs")
+console.log(1);
 
-// console.log("2");
-let fs = require('fs');
-getExt = () => {
-  fs.readFile('08_ext.json', (err, data) => {
-    console.log("2");
+const readFile = () => {
+  fs.readFile("08_ext.json",(err,data) => {
+    console.log(2);
   })
 }
-getExt();
-
-console.log("3");
+readFile();
+console.log(3);
 
 /**
- * Console：
  * 1
  * 3
  * 2
- */
+ *  */ 
 ```
 
  在上面代码中，由于 `fs.readFile` 是 Node 的异步函数。所以，程序先执行了 1 和 3，最后才执行 `fs.readFile` 的 2 部分。
@@ -1481,8 +1464,6 @@ EventEmitter.on('data', (ext) => {
 
 ### [3.10 get 与 post](https://link.juejin.cn/?target=undefined)
 
-> [返回目录](https://juejin.cn/post/6844903745755545614#catalog-chapter-three-ten)
-
 
 
 ![img](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/12/23/167db4adefcf3363~tplv-t2oaga2asx-watermark.awebp)
@@ -1491,7 +1472,7 @@ EventEmitter.on('data', (ext) => {
 
  话不多说，先上代码：
 
-> index.js
+> get.js
 
 ```js
 // 加载 http 模块
@@ -1557,7 +1538,7 @@ console.log('http server is start...');
 
  在上面，我们进行了后端 Node 的部署，那么前端页面要怎么做呢？
 
-> index.html
+> get.html
 
 ```js
 <!DOCTYPE html>
@@ -1629,8 +1610,6 @@ console.log('http server is start...');
  我们通过 Vue 进行了布局，通过 Axios 进行了接口的请求。从而完成了对数据的操作。
 
 ### [3.11 Node 连接 MySQL](https://link.juejin.cn/?target=undefined)
-
-> [返回目录](https://juejin.cn/post/6844903745755545614#catalog-chapter-three-eleven)
 
 > 关于 MySQL 的安装，可以查看 **wujf** 写的：[MySQL 安装及图形化工具](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2FLiangJunrong%2Fdocument-library)
 
@@ -1774,7 +1753,7 @@ connection.end();
 
 > update.js
 
-```
+```js
 // 连接 MySQL
 var mysql = require('mysql');
 // MySQL 的连接信息
@@ -1812,7 +1791,7 @@ connection.end();
 
 > read.js
 
-```
+```js
 // 连接 MySQL
 var mysql = require('mysql');
 // MySQL 的连接信息
